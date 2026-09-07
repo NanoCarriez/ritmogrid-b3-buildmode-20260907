@@ -8,10 +8,10 @@
   "frozen_b3_head": "006a13fa46ec6db1892cb74734d83d59f36c423a",
   "frozen_b3_branch": "b3-buildmode",
   "postrun_branch": "b3-postrun-repair-grokme-20260907",
-  "postrun_head": "PENDING_COMMIT",
+  "postrun_head": "REVIEWER_RESOLVES_BRANCH_HEAD",
   "repo_full_name": "NanoCarriez/ritmogrid-b3-buildmode-20260907",
   "t0": "2026-09-07T23:39:34Z",
-  "t_final": "PENDING",
+  "t_final": "2026-09-07T23:43:30Z",
   "public_evaluation_url": null,
   "public_route_type": "NONE_EXTERNALLY_OPENABLE",
   "grokme_publication_result": {

@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { STARTER_HABITS } from "@/lib/ritmo/palette";
 import { todayISO } from "@/lib/ritmo/dates";
 import { entryNote } from "@/lib/ritmo/streaks";
-import { FREE_ACTIVE_LIMIT } from "@/lib/ritmo/types";
+import { FREE_ACTIVE_LIMIT, STORAGE_KEY } from "@/lib/ritmo/types";
 import { useRitmo } from "@/store/ritmo-store";
 import { BarChart3, LayoutGrid, Plus, Settings } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -33,6 +33,13 @@ export function RitmoApp() {
       if (alive) setHydrated();
     };
     try {
+      let stored: string | null = null;
+      try {
+        stored = globalThis.localStorage?.getItem(STORAGE_KEY) ?? null;
+      } catch {
+        stored = null;
+      }
+      if (!stored) done();
       const result = useRitmo.persist.rehydrate();
       void Promise.resolve(result).then(done).catch(done);
     } catch {
@@ -146,7 +153,7 @@ function Screen() {
             }
           }}
           onShare={() => setScreen({ t: "share", id: habit.id })}
-          onToggleDay={(iso) => useRitmo.getState().toggleDay(habit.id, iso)}
+          onToggleDay={(iso) => useRitmo.getState().toggleCompletion(habit.id, iso)}
           onHoldDay={(iso) => setScreen({ t: "note", id: habit.id, date: iso })}
         />
       </div>
@@ -405,7 +412,8 @@ function EmptyState() {
 }
 
 function ArchiveView() {
-  const habits = useRitmo((s) => s.habits.filter((h) => h.archived));
+  const habits = useRitmo((s) => s.habits);
+  const archived = habits.filter((h) => h.archived);
   const setScreen = useRitmo((s) => s.setScreen);
   return (
     <div className="px-4 pt-[max(16px,env(safe-area-inset-top))] pb-10">
@@ -413,11 +421,11 @@ function ArchiveView() {
         Volver
       </button>
       <h1 className="font-display text-3xl tracking-tight">Archivo</h1>
-      {habits.length === 0 ? (
+      {archived.length === 0 ? (
         <p className="mt-3 text-sm text-muted">Nada archivado. El historial de un hábito se conserva al archivarlo.</p>
       ) : (
         <div className="mt-4 space-y-2">
-          {habits.map((h) => (
+          {archived.map((h) => (
             <div key={h.id} className="rounded-lg bg-surface border border-border px-3 py-3 flex items-center gap-3">
               <span>{h.emoji}</span>
               <span className="flex-1 font-medium text-sm">{h.name}</span>

@@ -44,6 +44,7 @@ interface Store extends RitmoState {
   moveHabit: (id: string, dir: -1 | 1) => void;
   setDayValue: (id: string, date: string, value: number) => void;
   toggleDay: (id: string, date: string) => void;
+  toggleCompletion: (id: string, date: string) => void;
   bumpDay: (id: string, date: string, delta: number) => void;
   setDayNote: (id: string, date: string, note: string) => void;
   patchSettings: (patch: Partial<Settings>) => void;
@@ -182,6 +183,18 @@ export const useRitmo = create<Store>()(
           return;
         }
         get().setDayValue(id, date, cur >= habit.dailyTarget ? 0 : habit.dailyTarget);
+      },
+      toggleCompletion: (id, date) => {
+        const s = get();
+        const habit = s.habits.find((h) => h.id === id);
+        if (!habit) return;
+        const cur = s.entries[id]?.[date]?.v ?? 0;
+        if (habit.kind === "quit") {
+          get().setDayValue(id, date, cur > 0 ? 0 : 1);
+          return;
+        }
+        const target = Math.max(1, habit.dailyTarget);
+        get().setDayValue(id, date, cur >= target ? 0 : target);
       },
       bumpDay: (id, date, delta) => {
         const s = get();

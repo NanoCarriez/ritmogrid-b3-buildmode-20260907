@@ -2,12 +2,12 @@
 
 STATUS = T4_B3
 CANDIDATE = BUILD_MODE
-T0/T1/T2/T3/T4/TOTAL_DURATION = T1 empty state ~8m / T2 core loop ~18m / T3 frontier ~28m / T4 cierre + polish + handoff / TOTAL ~40m
+T0/T1/T2/T3/T4/TOTAL_DURATION = T1 empty state ~8m / T2 core loop ~18m / T3 frontier ~28m / T4 cierre + polish + handoff / TOTAL ~40m + verification stamp
 REFERENCE_RESEARCHED = YES (habitkit.app, App Store CL/US, Play, TapSmart, ProdApps, APKMirror changelog)
 CORE_FEATURES_COMPLETE = YES
 DIFFERENTIATOR_HYPOTHESIS = Cierre de Ritmo: ritual de 10s para cerrar el día entero, puntaje 0–100 e hilo de días cerrados. Dolor: hábitos hechos pero no marcados; la grilla se ve rota. Encaja encima del un-toque, no lo reemplaza.
 DIFFERENTIATOR_IMPLEMENTED = YES
-DIFFERENTIATOR_USER_VALUE = Cierra pendientes en una pantalla, escribe intención de mañana, muestra hilo. Verificado: 67% con 1 pendiente → 100% y hilo 1 tras cerrar; banner “Ritmo cerrado”.
+DIFFERENTIATOR_USER_VALUE = Cierra pendientes en una pantalla, escribe intención de mañana, muestra hilo. Verificado: 33% con 2 pendientes → 100% y hilo 1 tras cerrar; banner “Ritmo cerrado”.
 DIFFERENTIATOR_VERIFICATION = UI: banner, hoja, skip/complete, nota, intención, score, hilo. Persistido en localStorage.cierres.
 EXPANSIONS_COMPLETED = quit habits, day notes, quantity/ring, 3 overview modes, share canvas, theme, week start, archive, export/import v1, in-app reminders badge, reorder up/down, stats chart
 EXPANSIONS_SKIPPED_AND_WHY = home_screen_widgets (nativo); reminders push (web); press-and-hold drag (PARTIAL, controles subir/bajar)
@@ -33,9 +33,9 @@ ROUTE_DEVIATIONS = none
 TOOLS_CONSIDERED = Netlify production, Neon/auth, competing builders
 TOOLS_USED = public web research, GitHub, Playwright smoke, agent-browser, tsx tests
 TOOL_HOPS = 1 (GitHub for deterministic handoff)
-REAL_DEFECTS = splash stuck on persist.rehydrate (fixed with timeout); count one-tap filled target then switched to increment; calendar blocked days before created (opened for backfill)
-DIAGNOSTIC_PROBES = 2 (hydration screenshot, localStorage createdAt)
-REPAIR_LOOPS = 2
+REAL_DEFECTS = splash stuck on persist.rehydrate (timeout + empty-storage fast path); count one-tap filled target then switched to increment; calendar blocked days before created (opened for backfill); calendar count tap incremented instead of completing the day (toggleCompletion); ArchiveView infinite loop from unstable zustand selector (fixed)
+DIAGNOSTIC_PROBES = 4 (hydration screenshot, localStorage createdAt, archive crash body text, calendar streak after tap)
+REPAIR_LOOPS = 4
 UNNECESSARY_HOPS = 0
 NANO_ROUTINE_INTERVENTIONS = 0
 AUTH_GATES = 0

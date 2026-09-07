@@ -25,5 +25,32 @@
   "frontier_path": "handoff/REPLICATION_FRONTIER.json",
   "netlify_production_deploys": 0,
   "prior_app_runtime_contamination": "NONE",
-  "persistence_route": "localStorage:ritmogrid.v1"
+  "persistence_route": "localStorage:ritmogrid.v1",
+  "verified_at": "2026-09-07T23:10:00Z",
+  "acceptance": {
+    "A01": "PASS",
+    "A02": "PASS",
+    "A03": "PASS",
+    "A04": "PASS",
+    "A05": "PASS",
+    "A06": "PASS",
+    "A07": "PASS",
+    "A08": "PASS",
+    "A09": "PASS",
+    "A10": "PASS",
+    "A11": "PASS",
+    "A12": "PASS",
+    "A13": "PASS",
+    "A14": "PASS",
+    "A15": "PASS",
+    "A16": "PASS",
+    "A17": "PASS",
+    "A18": "PASS",
+    "A19": "PASS",
+    "A20": "PASS",
+    "A21": "PASS",
+    "A22": "PASS",
+    "A23": "PASS",
+    "A24": "PASS"
+  }
 }

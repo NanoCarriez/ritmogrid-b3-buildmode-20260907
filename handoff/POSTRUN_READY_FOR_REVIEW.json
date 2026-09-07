@@ -1,0 +1,93 @@
+{
+  "schema": "labminiapps.postrun_ready_for_review.v1",
+  "test_id": "B3_POSTRUN",
+  "candidate": "BUILD_MODE",
+  "product": "RitmoGrid",
+  "status": "POSTRUN_READY_FOR_REVIEW",
+  "does_not_change_b3": true,
+  "frozen_b3_head": "006a13fa46ec6db1892cb74734d83d59f36c423a",
+  "frozen_b3_branch": "b3-buildmode",
+  "postrun_branch": "b3-postrun-repair-grokme-20260907",
+  "postrun_head": "PENDING_COMMIT",
+  "repo_full_name": "NanoCarriez/ritmogrid-b3-buildmode-20260907",
+  "t0": "2026-09-07T23:39:34Z",
+  "t_final": "PENDING",
+  "public_evaluation_url": null,
+  "public_route_type": "NONE_EXTERNALLY_OPENABLE",
+  "grokme_publication_result": {
+    "result": "FAIL",
+    "capability_in_this_run": "init_or_update_app available; no *.grok.me URL returned",
+    "tool_called": "init_or_update_app",
+    "tool_response": {
+      "project_id": "01a07de8-b5fa-7493-8fef-023a9003541c",
+      "client_id": "grok_962065ea05f0435088c8ce8bc8aba98a"
+    },
+    "env_after_call": {
+      "VITE_PUBLIC_HOSTNAME": null,
+      "app_env_public_host": false
+    },
+    "physical_probes": [
+      {"url": "https://grok.me", "http": 301, "location": "https://grok.com/"},
+      {"url": "https://ritmogrid.grok.me", "http": 404},
+      {"url": "https://01a07de8-b5fa-7493-8fef-023a9003541c.grok.me", "http": 404},
+      {"url": "https://grok-962065ea05f0435088c8ce8bc8aba98a.grok.me", "http": 404}
+    ],
+    "netlify_production": false,
+    "paid_route": false,
+    "rival_assistance": false,
+    "user_publish_ui_gate": "Grok Build user-facing Publish control is not exposed as an agent tool that returns a public hostname. Not requested from Nano.",
+    "externally_openable": false
+  },
+  "build_tests_result": {
+    "tsc": "PASS",
+    "streaks_unit": "PASS 5/5",
+    "export_unit": "PASS 4/4",
+    "browser_smoke_local_8080": {
+      "desktop_status": 200,
+      "mobile_status": 200,
+      "mobile_390x844_horizontal_overflow": false,
+      "console_errors": [],
+      "note": "local chat-bound preview only; not a public URL"
+    }
+  },
+  "mobile_result": {
+    "target": "local_preview_8080_not_grokme",
+    "viewport": "390x844",
+    "horizontal_overflow": false,
+    "copy_visible": true,
+    "grokme_mobile": "N/A_PUBLICATION_FAILED"
+  },
+  "hard_reload": "N/A_NO_PUBLIC_URL",
+  "nano_routine_interventions": 0,
+  "auth_gates": 0,
+  "turn_continuity_guard": "PASS",
+  "lightweight_handoff_result": "DOCUMENTED_NOT_STRIPPED",
+  "lessons_path": "handoff/BUILD_MODE_LESSONS_V1.json",
+  "reconciliation_path": "handoff/B3_POSTRUN_RECONCILIATION.json",
+  "portability_note_path": "handoff/PORTABILITY_NOTE.md",
+  "probes": {
+    "P01": "PASS",
+    "P02": "PASS",
+    "P03": "PASS",
+    "P04": "PASS",
+    "P05": "N/A",
+    "P06": "PASS",
+    "P07": "PASS",
+    "P08": "PASS",
+    "P09": "PASS",
+    "P10": "PASS",
+    "P11": "PASS",
+    "P12": "PASS"
+  },
+  "probes_pass": 11,
+  "probes_na": 1,
+  "probes_total": 12,
+  "same_chat_lesson_application": "PASS",
+  "b3_postrun_memory_canary": "b3pr-4db2a6-67a2",
+  "known_limitations": [
+    "No externally openable *.grok.me URL from this agent environment.",
+    "init_or_update_app registered a project/client id only.",
+    "Generic Build scaffold retained; portable map documented, not stripped.",
+    "New-chat native memory untested; canary planted for a future probe."
+  ]
+}

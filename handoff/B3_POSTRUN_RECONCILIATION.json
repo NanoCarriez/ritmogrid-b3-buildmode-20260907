@@ -1,0 +1,42 @@
+{
+  "schema": "labminiapps.b3_postrun_reconciliation.v1",
+  "test_id": "B3_POSTRUN",
+  "candidate": "BUILD_MODE",
+  "product": "RitmoGrid",
+  "does_not_change_b3": true,
+  "frozen_b3": {
+    "repo": "NanoCarriez/ritmogrid-b3-buildmode-20260907",
+    "branch": "b3-buildmode",
+    "head": "006a13fa46ec6db1892cb74734d83d59f36c423a",
+    "first_t4_labeled_commit": "d181051b715ee0af15f70d9244901f8c5cf43acb"
+  },
+  "historical_b3_truth": {
+    "intermediate_pause_existed": true,
+    "pause_cause": "turn-ending routine progress narration; not auth, not an observed tool crash",
+    "nano_routine_interventions": 1,
+    "auth_gates": 0,
+    "first_t4_stamp_was_premature": true,
+    "defects_still_present_at_first_t4": [
+      "ArchiveView unstable zustand selector (Maximum update depth exceeded)",
+      "calendar/history used toggleDay so count habits did not complete on tap",
+      "hydration splash until rehydrate/400ms; empty-storage not immediate"
+    ],
+    "final_verified_product_repair_after_first_t4": true,
+    "final_verified_product_repair_outside_40min_timebox": true,
+    "timestamps": {
+      "repo_created": "2026-09-07T22:09:10Z",
+      "first_t4_labeled_commit": "2026-09-07T22:29:51Z",
+      "final_verified_t4_commit": "2026-09-07T23:00:04Z",
+      "t0_original": "UNKNOWN"
+    },
+    "original_public_evaluation_url": null,
+    "original_public_route_type": "CANDIDATE_NATIVE_PREVIEW",
+    "original_public_route_externally_recoverable": false,
+    "original_a20_self_report": "PASS",
+    "original_a20_truth": "PASS_WITH_OBSERVATION",
+    "original_nano_routine_interventions_self_report": 0,
+    "original_nano_routine_interventions_truth": 1
+  },
+  "this_microtest_does_not_repair_b3_retroactively": true,
+  "recorded_at": "2026-09-07T23:42:00Z"
+}

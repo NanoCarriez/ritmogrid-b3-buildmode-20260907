@@ -1,0 +1,89 @@
+{
+  "schema": "labminiapps.builder_lessons.v1",
+  "test_id": "B3_POSTRUN",
+  "candidate": "BUILD_MODE",
+  "product": "RitmoGrid",
+  "created_at": "2026-09-07T23:42:00Z",
+  "b3_postrun_memory_canary": "b3pr-4db2a6-67a2",
+  "canary_does_not_prove_cross_chat_memory": true,
+  "guards": [
+    {
+      "id": "NO_ROUTINE_PROGRESS_TURN_END",
+      "rule": "Never end the assistant turn on a routine progress sentence while competent work remains. Continue tool calls until a terminal status or a truthful STOP."
+    },
+    {
+      "id": "T4_ONLY_AFTER_ALL_MANDATORY_PROBES",
+      "rule": "Do not stamp T4/24-of-24 before all mandatory probes have actually passed."
+    },
+    {
+      "id": "CAPTURE_T0_BEFORE_WORK",
+      "rule": "Record evidence-backed T0 before the first implementation or mutation."
+    },
+    {
+      "id": "FREEZE_AT_TIMEBOX",
+      "rule": "At timebox expiry freeze actual state; post-timebox repairs remain separate and must not be backdated into the competitive result."
+    },
+    {
+      "id": "PUBLIC_MEANS_EXTERNALLY_OPENABLE",
+      "rule": "Do not call a chat-bound live preview a public evaluation route."
+    },
+    {
+      "id": "HANDOFF_PUBLIC_URL_REQUIRED_WHEN_PUBLIC_REVIEW_IS_REQUIRED",
+      "rule": "READY_FOR_REVIEW must include a real externally openable URL or explicitly mark the public route unverified/failed."
+    },
+    {
+      "id": "NANO_INTERVENTION_ACCOUNTING",
+      "rule": "A user continue message is still a routine intervention even when no technical decision was made."
+    },
+    {
+      "id": "PRESERVE_HISTORY",
+      "rule": "Post-run repair must never rewrite the historical competitive result, frozen branch, or original handoff as if the fix existed during the test."
+    },
+    {
+      "id": "LIGHTWEIGHT_HANDOFF_WHEN_COMPETENT",
+      "rule": "Prefer product-focused portable delivery when generic scaffold is not materially required; do not claim a clean minimal repo if the shipped tree still contains unused platform chrome."
+    },
+    {
+      "id": "MACHINE_HANDOFF_OVER_HUMAN_RELAY",
+      "rule": "Put evidence, commit/ref and public URL in deterministic machine-readable handoff. Do not rely on Nano copy-paste."
+    }
+  ],
+  "continuity_capability_matrix": {
+    "A_SAME_CHAT_CONTEXT": {
+      "available": "YES",
+      "mechanism": "This conversation transcript plus the lessons file in /workspace/handoff remain in the current Build chat context.",
+      "limitation": "Context can be compacted; the durable copy is the GitHub file, not RAM."
+    },
+    "B_NEW_CHAT_NATIVE_MEMORY": {
+      "available": "UNKNOWN",
+      "mechanism": "No agent tool in this run writes a native cross-chat memory record. User-profile memory exists in the product, but this canary was not proven to land there.",
+      "user_setup_required": "UNKNOWN",
+      "evidence": "Canary planted only in this chat response and BUILD_MODE_LESSONS_V1.json. No physical new-chat recall test yet.",
+      "physical_new_chat_test_required": true
+    },
+    "C_PROJECT_LEVEL_CONTINUITY": {
+      "available": "UNKNOWN",
+      "mechanism": "Not created or modified. A future Grok Project/workspace that auto-injects AGENTS.md or this lessons file could persist instructions; that was not configured here.",
+      "what_persists": "untested",
+      "nano_setup_required": "YES if Project rules must be attached by the user",
+      "physical_test_required": true
+    },
+    "D_DURABLE_GITHUB_CONTINUITY": {
+      "available": "YES",
+      "label": "durable continuity, not native memory",
+      "mechanism": "Future Build chat can fetch NanoCarriez/ritmogrid-b3-buildmode-20260907 branch b3-postrun-repair-grokme-20260907 path handoff/BUILD_MODE_LESSONS_V1.json",
+      "expected_nano_transport": "optional pointer to repo/path; technically recoverable via GitHub without paste",
+      "physical_test_required": true
+    }
+  },
+  "next_new_chat_memory_probe": {
+    "ask_before_reading_github_or_files": true,
+    "expect_canary": "b3pr-4db2a6-67a2",
+    "expect_operational_lessons": [
+      "NO_ROUTINE_PROGRESS_TURN_END",
+      "T4_ONLY_AFTER_ALL_MANDATORY_PROBES",
+      "PUBLIC_MEANS_EXTERNALLY_OPENABLE"
+    ],
+    "adjudication": "NEW_CHAT_NATIVE_MEMORY = PASS / FAIL / UNKNOWN"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "labminiapps.ready_for_review.v1",
+  "test_id": "B3",
+  "product": "RitmoGrid",
+  "candidate": "BUILD_MODE",
+  "status": "READY_FOR_REVIEW",
+  "repo_full_name": "NanoCarriez/ritmogrid-b3-buildmode-20260907",
+  "branch": "b3-buildmode",
+  "public_evaluation_url": null,
+  "public_route_type": "CANDIDATE_NATIVE_PREVIEW",
+  "acceptance_passed": 24,
+  "acceptance_total": 24,
+  "reference_features_material": 24,
+  "reference_features_replicated": 21,
+  "reference_features_partial": 2,
+  "reference_features_not_replicated": 1,
+  "known_limitations": [
+    "No native home-screen widgets (web platform).",
+    "Reminders are in-app schedule + due badge, not OS push.",
+    "Reorder is up/down controls, not press-and-hold drag.",
+    "No Netlify production deploy (conservation rule)."
+  ],
+  "feature_map_path": "handoff/REFERENCE_FEATURE_MAP.json",
+  "receipt_path": "handoff/B3_RECEIPT.md",
+  "frontier_path": "handoff/REPLICATION_FRONTIER.json",
+  "netlify_production_deploys": 0,
+  "prior_app_runtime_contamination": "NONE",
+  "persistence_route": "localStorage:ritmogrid.v1"
+}

@@ -1,0 +1,57 @@
+{
+  "schema": "labminiapps.replication_frontier.v1",
+  "test_id": "B3",
+  "product": "RitmoGrid",
+  "candidate": "BUILD_MODE",
+  "frozen_at": "2026-09-07T22:25:00Z",
+  "frozen_before_differentiator": true,
+  "material_features_identified": 24,
+  "replicated": [
+    "fast_habit_creation",
+    "one_tap_daily_completion",
+    "visual_tile_grid",
+    "streaks",
+    "frequency_goals",
+    "habit_detail_history",
+    "calendar_edit_completions",
+    "archive_restore",
+    "import_export",
+    "dashboard_overview_modes",
+    "statistics",
+    "personalization",
+    "share_progress_card",
+    "freemium_boundary",
+    "privacy_offline_local",
+    "theme_dark_light",
+    "quit_habits",
+    "day_notes",
+    "quantity_daily_target",
+    "week_start_config",
+    "emoji_icon_picker"
+  ],
+  "partial": [
+    {
+      "id": "reorder_habits",
+      "reason": "Reordenar funciona con controles subir/bajar en el tablero. No se implementó press-and-hold + drag nativo; en web táctil es inestable y no vale destrozar el loop de un toque."
+    },
+    {
+      "id": "reminders",
+      "reason": "Se pueden fijar hasta 3 horarios por hábito y el tablero muestra aviso pendiente. No hay push nativo iOS/Android en esta ruta web."
+    }
+  ],
+  "not_replicated": [
+    {
+      "id": "home_screen_widgets",
+      "reason": "Widgets de pantalla de inicio dependen de APIs nativas iOS/Android. No existen de forma competente en PWA web dentro de este timebox y plataforma."
+    }
+  ],
+  "minor_not_scored": ["language_settings", "widget_theme_independent", "starter_categories"],
+  "hypothesis_not_scored": ["native_watch_health"],
+  "differentiator_hypothesis": {
+    "name": "Cierre de Ritmo",
+    "target_user_problem": "Al final del día quedan hábitos sin marcar aunque se hayan hecho; abrir cada tarjeta es fricción; la grilla se ve rota y se pierde el hilo de la constancia del día completo.",
+    "why_preference_or_pay": "Un ritual de 10 segundos cierra el día entero, produce un puntaje de Ritmo (0-100) y un hilo de días cerrados — razón concreta para abrir la app de noche y para pagar por el historial del hilo.",
+    "loop_fit": "No reemplaza el un-toque. Se apoya encima: si ya marcaste, el cierre es instantáneo; si faltan, los resuelves en una sola pantalla.",
+    "smallest_competent_version": "Banner en Hoy + hoja con hábitos pendientes (completar/saltar) + nota opcional + intención de mañana + puntaje y hilo visible en el tablero."
+  }
+}

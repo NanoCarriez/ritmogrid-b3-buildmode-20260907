@@ -1,0 +1,400 @@
+{
+  "schema": "labminiapps.reference_feature_map.v1",
+  "test_id": "B3",
+  "product": "RitmoGrid",
+  "candidate": "BUILD_MODE",
+  "reference": {
+    "name": "HabitKit",
+    "developer": "Sebastian Röhl",
+    "official_site": "https://habitkit.app/",
+    "store_chile": "https://apps.apple.com/cl/app/habit-tracker-habitkit/id6443918070"
+  },
+  "frozen_at": "2026-09-07T22:06:00Z",
+  "frozen_before_implementation": true,
+  "prior_app_runtime_contamination": "NONE",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://habitkit.app/",
+      "kind": "official_site",
+      "accessed": "2026-09-07"
+    },
+    {
+      "id": "S2",
+      "url": "https://apps.apple.com/cl/app/habit-tracker-habitkit/id6443918070",
+      "kind": "app_store_chile",
+      "accessed": "2026-09-07"
+    },
+    {
+      "id": "S3",
+      "url": "https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+      "kind": "app_store_us",
+      "accessed": "2026-09-07"
+    },
+    {
+      "id": "S4",
+      "url": "https://play.google.com/store/apps/details?id=com.roehl.habitkit",
+      "kind": "google_play",
+      "accessed": "2026-09-07"
+    },
+    {
+      "id": "S5",
+      "url": "https://www.tapsmart.com/news/habitkit-review/",
+      "kind": "independent_review",
+      "accessed": "2026-09-07"
+    },
+    {
+      "id": "S6",
+      "url": "https://productivity-apps.com/apps/habitkit-habit-tracker",
+      "kind": "independent_review",
+      "accessed": "2026-09-07"
+    },
+    {
+      "id": "S7",
+      "url": "https://www.apkmirror.com/apk/sebastian-rohl/habit-tracker-habitkit/",
+      "kind": "public_changelog",
+      "accessed": "2026-09-07"
+    }
+  ],
+  "completion_rate_definition": "NUMERATOR = days in [createdDate .. asOfDate] that meet the habit (build: value >= dailyTarget; quit: no slip). DENOMINATOR = calendar days in that inclusive range. If denominator is 0, rate is 0 (never NaN/Infinity).",
+  "features": [
+    {
+      "id": "fast_habit_creation",
+      "name": "Creación rápida de hábitos (nombre, descripción, icono/emoji, color)",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "App Store y sitio oficial: 'Provide a name, description, icon and color and you're good to go.'",
+      "sources": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "replication": "REPLICATED"
+    },
+    {
+      "id": "one_tap_daily_completion",
+      "name": "Registro de un toque para completar el día",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "Sitio oficial: one-tap logging. Reviews describen un botón de completado en cada hábito.",
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "replication": "REPLICATED"
+    },
+    {
+      "id": "visual_tile_grid",
+      "name": "Grilla visual de azulejos tipo heatmap (días = celdas de color)",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "Mecanismo comercial central. 'beautiful tile-based grid charts'; GitHub-like heatmap.",
+      "sources": [
+        "S1",
+        "S2",
+        "S5",
+        "S6"
+      ],
+      "replication": "REPLICATED"
+    },
+    {
+      "id": "streaks",
+      "name": "Rachas actuales y récord",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "Listados: 'Get motivation from streaks' y chips de racha en detalle.",
+      "sources": [
+        "S1",
+        "S4"
+      ],
+      "replication": "REPLICATED"
+    },
+    {
+      "id": "frequency_goals",
+      "name": "Metas de frecuencia (diario, N/semana, N/mes); días de descanso no rompen la cadena",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "Play/App Store: 3/week, 20/month, daily. Sitio: rest days do not break the chain.",
+      "sources": [
+        "S1",
+        "S4"
+      ],
+      "replication": "REPLICATED"
+    },
+    {
+      "id": "habit_detail_history",
+      "name": "Detalle de hábito con historial de mes/año de azulejos",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "Sitio: year of tiles, streak chips, calendar of every logged day. Changelog: redesigned habit detail with integrated calendar.",
+      "sources": [
+        "S1",
+        "S2"
+      ],
+      "replication": "REPLICATED"
+    },
+    {
+      "id": "calendar_edit_completions",
+      "name": "Calendario para agregar/quitar completados pasados",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "App Store: 'Simply tap a day to remove or add a completion.'",
+      "sources": [
+        "S2",
+        "S3"
+      ],
+      "replication": "REPLICATED"
+    },
+    {
+      "id": "archive_restore",
+      "name": "Archivar y restaurar hábitos",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "App Store: archive and restore from menu. Reviews: restoring archived habits is Pro.",
+      "sources": [
+        "S2",
+        "S5"
+      ],
+      "replication": "REPLICATED"
+    },
+    {
+      "id": "import_export",
+      "name": "Importar y exportar datos (portabilidad)",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "App Store: export to a file and restore later. Reviews: backup/export is Premium.",
+      "sources": [
+        "S2",
+        "S6"
+      ],
+      "replication": "REPLICATED",
+      "replication_reason": "JSON versionado ritmogrid.export.v1, gated Pro."
+    },
+    {
+      "id": "dashboard_overview_modes",
+      "name": "Varias densidades/modos de overview (cards, compact, checklist/list)",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "Sitio: cards, checklists, or compact views. Changelog: compact list redesigned; view switcher.",
+      "sources": [
+        "S1",
+        "S2"
+      ],
+      "replication": "REPLICATED",
+      "replication_reason": "Cuadrícula, compacto y lista."
+    },
+    {
+      "id": "statistics",
+      "name": "Estadísticas (tasa, días completados, rachas, tendencia mensual)",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "Sitio: completions, rates, streak records charted month by month. Reviews: detailed analytics are Premium.",
+      "sources": [
+        "S1",
+        "S6"
+      ],
+      "replication": "REPLICATED",
+      "replication_reason": "Básicas en libre; avanzadas (8 semanas + mejor día) en Pro."
+    },
+    {
+      "id": "personalization",
+      "name": "Personalización de color, icono/emoji y descripción por hábito",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "Sitio: hundreds of icons and 30+ colors. Store: customize dashboard colors, icons, descriptions. Emoji picker with search.",
+      "sources": [
+        "S1",
+        "S2"
+      ],
+      "replication": "REPLICATED"
+    },
+    {
+      "id": "share_progress_card",
+      "name": "Compartir progreso como tarjeta visual",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "Sitio: turn any grid into a themed share card. Independent reviews mention share images.",
+      "sources": [
+        "S1"
+      ],
+      "replication": "REPLICATED",
+      "replication_reason": "Canvas PNG, gated Pro."
+    },
+    {
+      "id": "freemium_boundary",
+      "name": "Límite Free vs Pro (hábitos ilimitados, stats, widgets, export, archive restore)",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "Chile IAP: monthly, annual, lifetime Pro. Reviews: unlimited habits, widgets, stats, export are Pro. Free remains usable.",
+      "sources": [
+        "S2",
+        "S5",
+        "S6"
+      ],
+      "replication": "REPLICATED",
+      "replication_reason": "3 hábitos libres; paywall demo sin pago fingido."
+    },
+    {
+      "id": "privacy_offline_local",
+      "name": "Privacidad local: sin cuenta, sin servidor, datos en el dispositivo",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "App Store: No sign-in. No servers. No cloud.",
+      "sources": [
+        "S2",
+        "S3"
+      ],
+      "replication": "REPLICATED",
+      "replication_reason": "localStorage, sin cuenta."
+    },
+    {
+      "id": "theme_dark_light",
+      "name": "Tema claro/oscuro",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "Reviews y changelog mencionan dark mode y tema de widget independiente del sistema.",
+      "sources": [
+        "S4",
+        "S2"
+      ],
+      "replication": "REPLICATED",
+      "replication_reason": "oscuro / claro / sistema."
+    },
+    {
+      "id": "quit_habits",
+      "name": "Hábitos de dejar (quit): días limpios por defecto, se marca el desliz",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "Changelog App Store: 'Quit habits are here... Every day counts as good by default; you only mark the days you slipped.'",
+      "sources": [
+        "S2"
+      ],
+      "replication": "REPLICATED"
+    },
+    {
+      "id": "day_notes",
+      "name": "Notas por día (press-and-hold en un día)",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "Changelog: 'Day notes are here. Press and hold any day to write down what went well...'",
+      "sources": [
+        "S2"
+      ],
+      "replication": "REPLICATED"
+    },
+    {
+      "id": "reorder_habits",
+      "name": "Reordenar hábitos (press-and-hold y arrastrar)",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "APKMirror 1.17.1 / App Store what's new: 'Press and hold a habit, then drag to reorder it'.",
+      "sources": [
+        "S7",
+        "S2"
+      ],
+      "replication": "PARTIAL",
+      "replication_reason": "Subir/bajar en el tablero. Sin press-and-hold drag táctil."
+    },
+    {
+      "id": "quantity_daily_target",
+      "name": "Objetivo diario cuantitativo (contador) y marcas alrededor del anillo; se puede superar la meta",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "Changelog: daily target as marks around the ring; unlimited tracking (pages, minutes); go past daily targets.",
+      "sources": [
+        "S2",
+        "S7"
+      ],
+      "replication": "REPLICATED",
+      "replication_reason": "Contador con marcas en el anillo; se puede superar la meta."
+    },
+    {
+      "id": "week_start_config",
+      "name": "Inicio de semana configurable (domingo, lunes, miércoles)",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "Changelog: 'Configure the start of the week, whether it's Sunday, Monday or Wednesday.'",
+      "sources": [
+        "S2"
+      ],
+      "replication": "REPLICATED",
+      "replication_reason": "Lunes / domingo / miércoles."
+    },
+    {
+      "id": "reminders",
+      "name": "Recordatorios por hábito (hasta 3) y check-in diario",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "Store: reminders with notification at specified time. Changelog: up to 3 reminders per habit, daily check-in reminders.",
+      "sources": [
+        "S2",
+        "S4"
+      ],
+      "replication": "PARTIAL",
+      "replication_reason": "Hasta 3 horarios y badge in-app. Sin push nativo web."
+    },
+    {
+      "id": "home_screen_widgets",
+      "name": "Widgets de pantalla de inicio (grilla, compact list, check-off)",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "Sitio y reviews: home screen widgets, Pro feature. Changelog: compact list widget, independent widget theme.",
+      "sources": [
+        "S1",
+        "S5",
+        "S6"
+      ],
+      "replication": "NOT_REPLICATED",
+      "replication_reason": "API nativa iOS/Android no disponible en esta ruta web."
+    },
+    {
+      "id": "emoji_icon_picker",
+      "name": "Selector de emoji/icono con búsqueda",
+      "classification": "CONFIRMED_PUBLIC_MATERIAL",
+      "evidence": "Changelog: emoji support, smart icon/emoji search. Sitio: hundreds of icons.",
+      "sources": [
+        "S1",
+        "S2"
+      ],
+      "replication": "REPLICATED"
+    },
+    {
+      "id": "language_settings",
+      "name": "Selector de idioma in-app",
+      "classification": "CONFIRMED_PUBLIC_MINOR",
+      "evidence": "What's new: pick the app language in Settings; Hindi and Korean added.",
+      "sources": [
+        "S2"
+      ]
+    },
+    {
+      "id": "widget_theme_independent",
+      "name": "Tema de widget independiente del sistema",
+      "classification": "CONFIRMED_PUBLIC_MINOR",
+      "evidence": "Changelog 1.15.2.",
+      "sources": [
+        "S2"
+      ]
+    },
+    {
+      "id": "starter_categories",
+      "name": "Categorías de hábitos de inicio",
+      "classification": "CONFIRMED_PUBLIC_MINOR",
+      "evidence": "What's new mentions starter categories switching with language.",
+      "sources": [
+        "S2"
+      ]
+    },
+    {
+      "id": "native_watch_health",
+      "name": "Apple Watch / Health sync",
+      "classification": "HYPOTHESIS_NOT_SCORED",
+      "evidence": "No evidencia pública competente en el sitio ni en los listados principales de HabitKit al momento del freeze.",
+      "sources": []
+    }
+  ],
+  "outcomes_added_at": "2026-09-07T22:40:00Z",
+  "original_material_ids_preserved": [
+    "fast_habit_creation",
+    "one_tap_daily_completion",
+    "visual_tile_grid",
+    "streaks",
+    "frequency_goals",
+    "habit_detail_history",
+    "calendar_edit_completions",
+    "archive_restore",
+    "import_export",
+    "dashboard_overview_modes",
+    "statistics",
+    "personalization",
+    "share_progress_card",
+    "freemium_boundary",
+    "privacy_offline_local",
+    "theme_dark_light",
+    "quit_habits",
+    "day_notes",
+    "reorder_habits",
+    "quantity_daily_target",
+    "week_start_config",
+    "reminders",
+    "home_screen_widgets",
+    "emoji_icon_picker"
+  ]
+}
